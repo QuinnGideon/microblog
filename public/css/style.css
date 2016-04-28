@@ -49,6 +49,7 @@ form {
 #sign_up {
 	float: right;
 	font-family: 'Open Sans', sans-serif;
-	background-color: RGBA(102, 74, 134, 1.00)
+	background-color: RGBA(102, 74, 134, 1.00);
 	color: white;
+	top: 10px;
 }
