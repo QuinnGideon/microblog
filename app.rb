@@ -1,9 +1,10 @@
 require 'sinatra'
 require 'sinatra/activerecord'
-require './models'
 require 'sinatra/reloader'
 require 'bundler/setup'
 require 'rack-flash'
+require './models'
+
 
 enable :sessions
 use Rack::Flash, :sweep => true
@@ -18,7 +19,7 @@ def current_user
 end
 
 get '/' do
-	if current_user == true
+	if current_user
 		erb :home
 	else
 		redirect '/sign-in'
@@ -28,11 +29,14 @@ end
 get '/sign-in' do
 	erb :signin
 end
-
+# thanks liana
 post '/sign-in' do   
-	@user = User.where(username: params[:username]).first   
+	@user = User.where(username: params[:username]).first 
+	puts params.inspect
+	puts @user.username  
+	puts 
 	if @user && @user.password == params[:password]     
-		session[:user_id] = @user.id     
+		session[:user_id] = @user.id   
 		flash[:notice] = "You've been signed in successfully."   
 	else     
 		flash[:alert] = "There was a problem signing you in."   
@@ -55,3 +59,13 @@ end
 post '/posts/create' do
 	Post.create(params[:post])
 end
+
+get '/Logout' do
+	@user = current_user
+	if @user
+			session.clear
+	end		
+	redirect '/'
+	end
+
+

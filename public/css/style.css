@@ -1,0 +1,41 @@
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	background-image: url("../images/candy.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#navlist {
+	list-style: none;
+	text-align: right;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1000;
+	background-color: black;
+	width: 100%;
+	height: 40px;
+	margin-top: 0px;
+	padding-top: 10px;
+}
+
+#navlist li {
+	display: inline;
+	padding: 5px 50px;
+
+}
+
+#navlist li a {
+	text-decoration: none;
+	color: white;
+}
+
+#navlist li a:hover{
+	color: red;
+} 
+
+h1, h3 {
+	text-align: center;
+}
