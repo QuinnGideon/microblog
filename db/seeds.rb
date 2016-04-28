@@ -1,3 +1,4 @@
+
 users = User.create([
 	{email: "bobfrank@aol.com", fname: "Bob", lname: "Last", password: "12345", username: "bobfrank1"},
 	{email: "sarahconnor@excite.com", fname: "Sarah", lname: "Connor", password: "12345", username: "sterminator3000"},
@@ -23,4 +24,4 @@ Post.create([
 	{user_id: users.sample.id, title: "Kanye South", body: "Good Morning. You're the only power. Told him I've been on ten since 10th grade, nigga. Welcome to Graduation. Ball so hard, man, this shit cray, nigga. Cheated on every test. I mean, damn, did you even see the test?. Take you to get this fly? All day, nigga. How long you niggas ball?"},
 	{user_id: users.sample.id, title: "Busta busts again", body: "How we shoot the spit-shine on niggas like a pair of shoes. On your marks, get set, ready, GO!(repeat) (2). Ha, who, ha. Fuck that, look at shorty, she a little cutie yo. On the downhill racing I'm holding my head. When I display freaky bump shit you wanna say. Hot shit got all you niggaz in wet clothes. "},
 	{user_id: users.sample.id, title: "Wu Who??", body: "Yeah baby, I like it RAWWW!!!. Yeah baby, I like it RAWWW!!!. Make it brief son, half short and twice strong. To rip something down, the billboard holders is back. Old Dirty corporata, splash, I'm up on the punanny flash."},
-	])
+
