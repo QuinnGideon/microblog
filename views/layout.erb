@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>UdB Network</title>
+	<link rel="stylesheet" type="text/css" href="css/signin.css">
 </head>
 <body>
 <% if flash[:notice] %>     
@@ -12,10 +13,16 @@
 	 <% if flash[:alert] %>     
 	 	<div class="flash alert">       
 	 		<%=flash[:alert] %>     
-	 	</div>   
+	 	</div>
 	 <% end %>
 
 	<%= yield %>
+	 			<nav><ul>
+	 				<li><a href="#">Settings</a></li>
+	 				<li><a href="#">View Profile</a></li>
+	 				<li><a href="#">View Posts</a></li>
+	 				<li><a href="#">Sign-in</a></li>
+	 			</ul></nav>   
 
 </body>
 </html>
