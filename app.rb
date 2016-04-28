@@ -20,7 +20,7 @@ end
 
 get '/' do
 	if current_user
-		erb :home
+		redirect '/Posts'
 	else
 		redirect '/sign-in'
 	end
@@ -52,12 +52,15 @@ get '/login-failed' do
 	"<h1>Log in Failed</h1>"
 end
 
-get '/posts/new' do
-	erb :new_post
+get '/Posts' do
+	@posts = Post.all
+	erb :posts
 end
 
-post '/posts/create' do
-	Post.create(params[:post])
+post '/Posts' do
+	Post.create
+	(params[:post])
+	redirect '/'
 end
 
 get '/Logout' do
@@ -66,6 +69,11 @@ get '/Logout' do
 			session.clear
 	end		
 	redirect '/'
-	end
+end
+
+get '/Settings' do
+	@user = current_user
+
+end
 
 

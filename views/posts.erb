@@ -1,17 +1,20 @@
 
+<br><br><br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
 
-<form method="POST" action="/posts">   
-	<label for="posts">Posts</label>   
-	<input type="text" name="[post]posts">    
+<form method="POST" action="/Posts">   
+	<label for="title">Title</label>   
+	<input type="string" name="title"> <br><br><br><br> 
+	<label for="body">Comments</label> 
+	<textarea type="text" name="body" rows="5" cols="30"></textarea>   
 	<input type="submit"> 
 </form>
 
-
-<form method="POST" action="/posts/create">   
-	<label for="title">Post Title</label>   
-	<input type="text" name="[post]title">   
-	<label for="text">Post Text</label>   
-	<textarea name="[post]body"></textarea>  
-	<input type="hidden" value=<%=current_user.id %> name="[post]user_id"
-	<input type="submit"> 
-</form>
+<% @posts.each do |t| %>
+		<h3><%= t.title %></h3>
+		<p><%= t.body %></p>
+<% end %>

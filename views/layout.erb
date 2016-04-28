@@ -19,16 +19,20 @@
 <% end %>
 
 	<div id="navbar">
-		<% navlist = ["Home", "Posts", "Settings", "Logout"] %>
-					<ul id="navlist">
-						<% navlist.each do |i| %>
-							<li>
-								<a href="/<%= i %>"><%= i %></a> 
-							</li>
-
-
-						<% end %>
-					</ul>
+		<ul id="navlist">
+			<li>
+				<a href="/">Home</a> 
+			</li>
+			<li>
+				<a href="/Posts">Posts</a>
+			</li>
+			<li>
+				<a href="/Settings">Settings</a>
+			</li>
+			<li>
+				<a href="/Logout">Logout</a>
+			</li>
+		</ul>
 	</div>
 
 	<%= yield %>
