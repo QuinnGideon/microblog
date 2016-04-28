@@ -1,5 +1,3 @@
-# require_relative '../app'
-
 users = User.create([
 	{email: "bobfrank@aol.com", fname: "Bob", lname: "Last", password: "12345", username: "bobfrank1"},
 	{email: "sarahconnor@excite.com", fname: "Sarah", lname: "Connor", password: "12345", username: "sterminator3000"},
