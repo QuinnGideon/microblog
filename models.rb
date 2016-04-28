@@ -1,3 +1,10 @@
-# class User < ActiveRecord::Base
+class User < ActiveRecord::Base
+	has_many :posts
 
-# end
+end
+
+class Post < ActiveRecord::Base
+	belongs_to :users
+
+end
+
