@@ -34,7 +34,7 @@ post '/sign-in' do
 	@user = User.where(username: params[:username]).first 
 	puts params.inspect
 	puts @user.username  
-	puts 
+	# puts 
 	if @user && @user.password == params[:password]     
 		session[:user_id] = @user.id   
 		flash[:notice] = "You've been signed in successfully."   
@@ -58,8 +58,7 @@ get '/Posts' do
 end
 
 post '/Posts' do
-	Post.create
-	(params[:post])
+	Post.create(params[:post])
 	redirect '/'
 end
 
@@ -73,7 +72,18 @@ end
 
 get '/Settings' do
 	@user = current_user
-
+	erb :settings
 end
+
+post '/edit' do
+	@user = current_user
+	@user.update(username: params[:username], password: params[:password], email: params[:email])
+		erb :edit
+end
+
+
+
+
+
 
 
