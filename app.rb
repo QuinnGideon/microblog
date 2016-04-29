@@ -19,10 +19,11 @@ def current_user
 end
 
 get '/' do
+	@posts = Post.all
 	if current_user
-		redirect '/Posts'
+		erb :posts
 	else
-		redirect '/sign-in'
+		erb :home
 	end
 end
 
@@ -58,8 +59,7 @@ get '/Posts' do
 end
 
 post '/Posts' do
-	Post.create
-	(params[:post])
+	Post.create(params[:post])
 	redirect '/'
 end
 
@@ -73,7 +73,6 @@ end
 
 get '/Settings' do
 	@user = current_user
-
 end
 
 
