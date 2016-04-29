@@ -8,14 +8,18 @@
 <h1>Please sign in</h1>
 
 <div id="sign_up">
-		<form method="POST" action="/sign-up">   
+		<form method="POST" action="/sign-up" class="contact_form">   
 			<label for="username">Username</label>   
 			<input type="text" size="40" name="username"><br>   
 			<label for="password">Password</label>   
 			<input type="password" size="40" name="password"><br>
 			<label for="email">Email</label>   
-			<input type="email" size="40" name="Email"><br>   
-			<input type="submit"> 
+			<input type="email" size="40" name="email"><br>
+			<label for="fname">First Name</label>   
+			<input type="text" size="40" name="fname"><br>   
+			<label for="lname">Last Name</label>   
+			<input type="text" size="40" name="lname"><br>   
+			<button class="submit" type="submit">Submit</button> 
 		</form>
 </div>
 <form method="POST" action="/sign-in">   
@@ -23,7 +27,7 @@
 	<input type="text" name="username">   
 	<label for="password">Password</label>   
 	<input type="password" name="password">   
-	<input type="submit"> 
+	<button type="submit">Submit</button> 
 </form>
 
 

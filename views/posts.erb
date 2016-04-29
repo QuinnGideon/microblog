@@ -1,11 +1,10 @@
 <br><br>
 <br><br>
 <br><br>
-<% if current_user == @user %>
-	
-
-	<h1>Welcome <%= @user.fname %></h1>
-
+<% if current_user %>
+	<h1>Welcome <%= current_user.fname %></h1><br>
+	<h4>Logged In As: <%= current_user.email %></h4>
+	<h4>Current User Name: <%= current_user.username %></h4>
 <% end %>
 
 
@@ -20,9 +19,9 @@
 </form>
 
 
-<% @posts.each do |t| %>
+<% @posts.last(4).reverse.each do |t| %>
 	<div id="posts">
-<hr>
+		<hr>
 		<h3><%= t.title %></h3>
 		<p><%= t.body %></p>
 	</div>
